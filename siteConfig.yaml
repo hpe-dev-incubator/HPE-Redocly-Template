@@ -29,18 +29,18 @@ nav:
   - search: true
 
 footer:
-  copyrightText: Copyright © Redocly 2019-2021. All right reserved.
+  copyrightText: © 2020 Hewlett Packard Enterprise Development LP
   columns:
     - group:
       items:
-        - label: Privacy Policy
-          href: 'https://client.greenlake.hpe.com/login#'
-          external: true
-        - label: Cookies
-          href: 'https://www.hpe.com/us/en/legal/privacy.html#accordion-accordioncontainerco-4'
+        - label: Privacy 
+          href: 'https://www.hpe.com/us/en/legal/privacy.html'
           external: true
         - label: Terms of Use
           href: 'https://www.hpe.com/us/en/about/legal/terms-of-use.html'
+          external: true
+        - label: Add Choices & Cookies
+          href: 'https://www.hpe.com/us/en/legal/privacy.html#datacollection'
           external: true
         - label: Do Not Sell My Personal Information
           href: 'https://www.hpe.com/us/en/privacy/personal-information.html'
