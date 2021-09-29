@@ -1,0 +1,213 @@
+---
+title: Demo API Portal
+---
+
+import { LandingLayout } from '@redocly/developer-portal/ui';
+
+import {
+  Button,
+  FlexSection,
+  Flex,
+  Jumbotron,
+  ThinTile,
+  WideTile,
+  Emphasis,
+  H1,
+  H2,
+  H3,
+  SectionHeader,
+  Typography
+} from '@redocly/developer-portal/ui';
+
+import {
+  Grommet,
+  Section,
+  Box,
+  Card,
+  CardBody,
+  CardHeader,
+  CardFooter,
+  Heading,
+  RoutedButton,
+  Text,
+  Paragraph,
+  Grid,
+} from 'grommet';
+
+import { hpe } from 'grommet-theme-hpe';
+
+import { NavBar } from '@redocly/developer-portal/ui';
+
+import icon1 from './images/hpe.svg';
+import launchFastIcon from './images/launch-fast.svg';
+import icon3 from './images/icon3.png';
+import bookManagementIcon from './images/book-management.svg';
+import foundOrPrivate from './images/found-or-private.svg';
+import hpeElement from "./images/HPE_ELEMENT_20210217008_16x9_1600_0_72_RGB.jpg";
+import LandingCard from './components/LandingCard';
+
+export default LandingLayout;
+
+<NavBar location={props.location} standalone={false} />
+<Grommet theme={hpe}>
+  <Box
+    align='start'
+    justify='start'
+    background={{
+      dark: true,
+      image: `url(${hpeElement})`,
+    }}
+    pad={{ vertical: 'xlarge', horizontal: 'small' }}
+    height='75vh'
+    style={{ minHeight: 550, maxHeight: 900 }}
+  >
+    <Box width="35%" margin={{left: '150px'}}>
+      <Heading level='2' margin={{bottom: 'none'}} weight='bold' size='large'>
+        Product XXX API
+      </Heading>
+      <Text size="xxlarge">
+        Reference Documents
+      </Text>
+      <Text size="large" margin={{vertical: '50px'}}>
+          Lorem ipsum dolor sit amet, pri putent oportere quaerendum in, ea mea justo invenire
+          aliquando. Usu modo suavitate ea. Et sed labitur epicurei adipiscing. 
+      </Text>
+      <Box 
+        width="140px"
+      >
+        <RoutedButton
+          primary={true}
+          path="developer-portal"
+          label={
+            <Box >
+              <Text size='large'>
+                Get started
+              </Text>
+            </Box>
+          }
+        />
+      </Box>
+    </Box>
+  </Box>
+</Grommet>
+<Grommet theme={hpe}>
+  <Heading
+    textAlign='left'
+    style={{ fontWeight: '400' }}
+    level='2'
+    margin={{ vertical: 'large'}}
+  >
+    Manage your datacenter with <strong>Redfish</strong> today!
+  </Heading>
+  <Box align='center' pad='medium'>
+    <Box
+      style={{ maxWidth: 1800 }}
+      margin={{ vertical: 'large' }}
+      direction='row'
+      wrap={true}
+      justify='center'
+    >
+      <LandingCard
+        margin='medium'
+        path='#'
+        icon={icon1}
+        titleText='HPE RESTful Interface Tool'
+        bodyText='User Guide'
+      />
+      <LandingCard
+        margin='medium'
+        path='#'
+        icon={icon3}
+        titleText='HPE Integrated Lights Out'
+        bodyText='Identity and Access Management is all about users, user groups, API clients, roles, spaces, and the assignments among them.'
+      />
+      <LandingCard
+        margin='medium'
+        path='#'
+        icon={icon1}
+        titleText='HPE RESTful Interface Tool'
+        bodyText='User Guide'
+      />
+      <LandingCard
+        margin='medium'
+        path='#'
+        icon={icon3}
+        titleText='HPE Integrated Lights Out'
+        bodyText='Identity and Access Management is all about users, user groups, API clients, roles, spaces, and the assignments among them.'
+      />
+    </Box>
+  </Box>
+</Grommet>
+<Grommet theme={hpe}>
+  <Box align='center' pad='medium' background="#EFEFEF">
+    <Heading
+      textAlign='center'
+      style={{ fontWeight: '400' }}
+      level='2'
+      margin={{ vertical: 'large'}}
+    >
+      Explore our platforms
+    </Heading>
+    <Box
+      style={{ maxWidth: 1800 }}
+      margin={{ vertical: 'large' }}
+      direction='row'
+      wrap={true}
+      justify='center'
+    >
+      <Grid
+        rows={['medium', 'medium']}
+        columns={['small', 'small', 'small']}
+        gap="xlarge"
+      >
+        <Card background="blue" width={{max: '200px'}}>
+          <CardBody pad="small">
+            <Box gap="small" align="center" >
+              <Box>
+                <Text size="medium" weight="bold">
+                  Hewlett Packard Enterprise Logo
+                </Text>
+              </Box>
+            </Box>
+          </CardBody>
+          <CardFooter direction="column" background="white" pad={{ horizontal: 'medium', vertical: 'small' }}>
+            <Text size="small" style={{ fontWeight: '400' }}>HPE</Text>
+            <Paragraph size="xsmall">HPE is a global, edge-to-cloud Platform-as-a-Servicec ompany built to transform your business</Paragraph>
+          </CardFooter>
+        </Card>
+        <Card background="green" width={{max: '200px'}}>
+          <CardBody pad="small">
+            <Box gap="small" align="center" >
+              <Box>
+                <Text size="medium" weight="bold">
+                  HPE Dev Logo
+                </Text>
+              </Box>
+            </Box>
+          </CardBody>
+          <CardFooter direction="column" background="white" pad={{ horizontal: 'medium', vertical: 'small' }}>
+            <Text size="small" style={{ fontWeight: '400' }}>HPE</Text>
+            <Paragraph size="xsmall">HPE is a global, edge-to-cloud Platform-as-a-Servicec ompany built to transform your business</Paragraph>
+          </CardFooter>
+        </Card>
+        <Card background="violet" width={{max: '200px'}}>
+          <CardBody pad="small">
+            <Box gap="small" align="center" >
+              <Box>
+                <Text size="medium" weight="bold">
+                  Grommet Logo
+                </Text>
+              </Box>
+            </Box>
+          </CardBody>
+          <CardFooter direction="column" background="white" pad={{ horizontal: 'medium', vertical: 'small' }}>
+            <Text size="small" style={{ fontWeight: '400' }}>HPE</Text>
+            <Paragraph size="xsmall">HPE is a global, edge-to-cloud Platform-as-a-Servicec ompany built to transform your business</Paragraph>
+          </CardFooter>
+        </Card>
+      </Grid>
+    </Box>
+  </Box>
+</Grommet>
+
+
