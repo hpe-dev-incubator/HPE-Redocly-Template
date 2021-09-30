@@ -7,7 +7,10 @@ const ResponsiveGrid = ({ children, columns, rows, ...props }) => (
     {(size) => {
       return (
         <Grid
-          gap="130px"
+          gap={{
+            row: size === 'small' ? 'large' : '130px', 
+            column: '130px'
+          }}
           {...props}
           rows={rows[size]}
           columns={columns[size]}
