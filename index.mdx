@@ -91,15 +91,16 @@ export default LandingLayout;
   </Box>
 </Grommet>
 <Grommet theme={hpe}>
-  <Heading
-    textAlign='left'
+
+  <Box align='center' pad='medium'>
+    <Heading
+    textAlign='center'
     style={{ fontWeight: '400' }}
     level='2'
     margin={{ vertical: 'large'}}
-  >
-    Manage your datacenter with <strong>Redfish</strong> today!
+    >
+    Describe your APIs here!
   </Heading>
-  <Box align='center' pad='medium'>
     <Box
       style={{ maxWidth: 1800 }}
       margin={{ vertical: 'large' }}
@@ -111,29 +112,15 @@ export default LandingLayout;
         margin='medium'
         path='#'
         icon={icon1}
-        titleText='HPE RESTful Interface Tool'
-        bodyText='User Guide'
+        titleText='API #1'
+        bodyText='Developer Guide'
       />
       <LandingCard
         margin='medium'
         path='#'
         icon={icon3}
-        titleText='HPE Integrated Lights Out'
-        bodyText='Identity and Access Management is all about users, user groups, API clients, roles, spaces, and the assignments among them.'
-      />
-      <LandingCard
-        margin='medium'
-        path='#'
-        icon={icon1}
-        titleText='HPE RESTful Interface Tool'
-        bodyText='User Guide'
-      />
-      <LandingCard
-        margin='medium'
-        path='#'
-        icon={icon3}
-        titleText='HPE Integrated Lights Out'
-        bodyText='Identity and Access Management is all about users, user groups, API clients, roles, spaces, and the assignments among them.'
+        titleText='API #2'
+        bodyText='Developer Guide'
       />
     </Box>
   </Box>
