@@ -32,6 +32,8 @@ import {
   Text,
   Paragraph,
   Grid,
+  ResponsiveContext,
+  Image,
 } from 'grommet';
 
 import { hpe } from 'grommet-theme-hpe';
@@ -45,6 +47,14 @@ import bookManagementIcon from './images/book-management.svg';
 import foundOrPrivate from './images/found-or-private.svg';
 import hpeElement from "./images/HPE_ELEMENT_20210217008_16x9_1600_0_72_RGB.jpg";
 import LandingCard from './components/LandingCard';
+import ResponsiveGrid from './components/ResponsiveGrid';
+import PlatformCard from './components/PlatformCard';
+import hpeLogo from './images/platforms/hpe.svg';
+import hpeDevLogo from './images/platforms/hpe-dev.svg';
+import grommetLogo from './images/platforms/grommet.svg';
+import hackShackLogo from './images/platforms/hackshack.svg';
+import slackLogo from './images/platforms/slack.svg';
+import gitHubLogo from './images/platforms/github.svg';
 
 export default LandingLayout;
 
@@ -101,13 +111,27 @@ export default LandingLayout;
     >
     Describe your APIs here!
   </Heading>
-    <Box
+    {/* <Box
       style={{ maxWidth: 1800 }}
       margin={{ vertical: 'large' }}
       direction='row'
       wrap={true}
       justify='center'
-    >
+    > */}
+    <ResponsiveGrid
+        rows={{
+          small: ['auto', 'auto'],
+          medium: ['auto', 'auto'],
+          large: ['auto'],
+          xlarge: ['auto'],
+        }}
+                columns={{
+          small: ['auto'],
+          medium: ['auto', 'auto'],
+          large: ['auto', 'auto'],
+          xlarge: ['auto', 'auto'],
+        }}
+      >
       <LandingCard
         margin='medium'
         path='#'
@@ -122,77 +146,92 @@ export default LandingLayout;
         titleText='API #2'
         bodyText='Developer Guide'
       />
-    </Box>
+      <LandingCard
+        margin='medium'
+        path='#'
+        icon={icon3}
+        titleText='API #3'
+        bodyText='Developer Guide'
+      />
+      <LandingCard
+        margin='medium'
+        path='#'
+        icon={icon3}
+        titleText='API #4'
+        bodyText='Developer Guide'
+      />
+      </ResponsiveGrid>
+    {/* </Box> */}
   </Box>
 </Grommet>
 <Grommet theme={hpe}>
   <Box align='center' pad='medium' background="#EFEFEF">
     <Heading
       textAlign='center'
-      style={{ fontWeight: '400' }}
+      style={{ fontWeight: '600' }}
       level='2'
       margin={{ vertical: 'large'}}
     >
       Explore our platforms
     </Heading>
     <Box
-      style={{ maxWidth: 1800 }}
-      margin={{ vertical: 'large' }}
+      style={{ maxWidth: 1500 }}
+      margin={{ bottom: 'large' }}
       direction='row'
       wrap={true}
       justify='center'
     >
-      <Grid
-        rows={['medium', 'medium']}
-        columns={['small', 'small', 'small']}
-        gap="xlarge"
+      <ResponsiveGrid
+        rows={{
+          small: ['auto', 'auto'],
+          medium: ['auto', 'auto'],
+          large: ['auto'],
+          xlarge: ['auto'],
+        }}
+        columns={{
+          small: ['auto'],
+          medium: ['auto', 'auto'],
+          large: ['auto', 'auto', 'auto'],
+          xlarge: ['auto', 'auto', 'auto'],
+        }}
       >
-        <Card background="blue" width={{max: '200px'}}>
-          <CardBody pad="small">
-            <Box gap="small" align="center" >
-              <Box>
-                <Text size="medium" weight="bold">
-                  Hewlett Packard Enterprise Logo
-                </Text>
-              </Box>
-            </Box>
-          </CardBody>
-          <CardFooter direction="column" background="white" pad={{ horizontal: 'medium', vertical: 'small' }}>
-            <Text size="small" style={{ fontWeight: '400' }}>HPE</Text>
-            <Paragraph size="xsmall">HPE is a global, edge-to-cloud Platform-as-a-Servicec ompany built to transform your business</Paragraph>
-          </CardFooter>
-        </Card>
-        <Card background="green" width={{max: '200px'}}>
-          <CardBody pad="small">
-            <Box gap="small" align="center" >
-              <Box>
-                <Text size="medium" weight="bold">
-                  HPE Dev Logo
-                </Text>
-              </Box>
-            </Box>
-          </CardBody>
-          <CardFooter direction="column" background="white" pad={{ horizontal: 'medium', vertical: 'small' }}>
-            <Text size="small" style={{ fontWeight: '400' }}>HPE</Text>
-            <Paragraph size="xsmall">HPE is a global, edge-to-cloud Platform-as-a-Servicec ompany built to transform your business</Paragraph>
-          </CardFooter>
-        </Card>
-        <Card background="violet" width={{max: '200px'}}>
-          <CardBody pad="small">
-            <Box gap="small" align="center" >
-              <Box>
-                <Text size="medium" weight="bold">
-                  Grommet Logo
-                </Text>
-              </Box>
-            </Box>
-          </CardBody>
-          <CardFooter direction="column" background="white" pad={{ horizontal: 'medium', vertical: 'small' }}>
-            <Text size="small" style={{ fontWeight: '400' }}>HPE</Text>
-            <Paragraph size="xsmall">HPE is a global, edge-to-cloud Platform-as-a-Servicec ompany built to transform your business</Paragraph>
-          </CardFooter>
-        </Card>
-      </Grid>
+        <PlatformCard
+          icon={hpeLogo}
+          title='HPE'
+          description='HPE is a global, edge-to-cloud Platform-as-a-Servicec ompany built to transform your business'
+          backgroundColor='brand'
+        />
+        <PlatformCard
+          icon={hpeDevLogo}
+          title='HPE Dev'
+          description='Find the resources you need to design and build the best possible software experiences that harness the most value from your data.'
+          backgroundColor='#17EBA0'
+        />
+        <PlatformCard
+          icon={grommetLogo}
+          title='Grommet'
+          description='Build responsive and accessible mobile-first projects for the web with an easy to use component library'
+          backgroundColor='#7630EA'
+        />
+        <PlatformCard
+          icon={hackShackLogo}
+          title='Hack Shack'
+          description='Collaborate and expand your skills.Try our technology Workshops-on-Demand, for a unique, hands-on learning experience.'
+          backgroundColor='#F740FF'
+        />
+        <PlatformCard
+          icon={slackLogo}
+          title='Slack'
+          description='Our Slack channel to brings people together to work as one unified team.'
+          backgroundColor='#FC6161'
+        />
+        <PlatformCard
+          icon={gitHubLogo}
+          title='GitHub'
+          description='GitHub is a Git repository hosting service, but it adds many of its own features. '
+          backgroundColor='#444444'
+        />
+      </ResponsiveGrid>
     </Box>
   </Box>
 </Grommet>

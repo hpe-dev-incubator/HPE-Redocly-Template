@@ -2,7 +2,7 @@ import * as React from 'react';
 import PropTypes from 'prop-types';
 import { ResponsiveContext } from 'grommet';
 import HoverCard from '../HoverCard';
-import { Box, CardBody, Text, Heading, Image, Button } from 'grommet';
+import { Box, Card, CardBody, Text, Heading, Image } from 'grommet';
 import { navigate } from '@redocly/ui';
 
 export default function LandingCard({
@@ -19,14 +19,15 @@ export default function LandingCard({
     'medium': '600px',
   }[size] || 'large';
   return (
-    <HoverCard
-      basis={basis}
-      height={!isSmallSize && '280px'}
-      margin={{ horizontal: 'medium', bottom: 'large' }}
-      pad='medium'
-      onClick={() => navigate(path)}
-    >
-      <CardBody justify='center' pad='small'>
+    // <HoverCard
+    //   basis={basis}
+    //   height={!isSmallSize && '280px'}
+    //   margin={{ horizontal: 'medium', bottom: 'large' }}
+    //   pad='medium'
+    //   onClick={() => navigate(path)}
+    // >
+    <Card>
+      <CardBody justify='center'>
         <Box
           justify='between'
           align='center'
@@ -50,7 +51,8 @@ export default function LandingCard({
           </Box>
         </Box>
       </CardBody>
-    </HoverCard>
+      </Card>
+    // </HoverCard>
   );
 }
 
