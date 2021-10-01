@@ -111,14 +111,16 @@ export default LandingLayout;
     >
     Describe your APIs here!
   </Heading>
-    {/* <Box
-      style={{ maxWidth: 1800 }}
+    <Box
+      width='1115px'
       margin={{ vertical: 'large' }}
       direction='row'
       wrap={true}
       justify='center'
-    > */}
+    >
     <ResponsiveGrid
+        cardType='landing'
+        fill={true}
         rows={{
           small: ['auto', 'auto'],
           medium: ['auto', 'auto'],
@@ -161,7 +163,7 @@ export default LandingLayout;
         bodyText='Developer Guide'
       />
       </ResponsiveGrid>
-    {/* </Box> */}
+    </Box>
   </Box>
 </Grommet>
 <Grommet theme={hpe}>
@@ -175,13 +177,14 @@ export default LandingLayout;
       Explore our platforms
     </Heading>
     <Box
-      style={{ maxWidth: 1500 }}
+      width='1115px'
       margin={{ bottom: 'large' }}
       direction='row'
       wrap={true}
       justify='center'
     >
       <ResponsiveGrid
+        cardType='platform'
         rows={{
           small: ['auto', 'auto'],
           medium: ['auto', 'auto'],

@@ -1,8 +1,7 @@
 import * as React from 'react';
 import PropTypes from 'prop-types';
-import { ResponsiveContext } from 'grommet';
 import HoverCard from '../HoverCard';
-import { Box, Card, CardBody, Text, Heading, Image } from 'grommet';
+import { Box, CardBody, Text, Heading, Image } from 'grommet';
 import { navigate } from '@redocly/ui';
 
 export default function LandingCard({
@@ -11,37 +10,24 @@ export default function LandingCard({
   icon,
   path
 }) {
-  const size = React.useContext(ResponsiveContext);
-  const isSmallSize = size === 'small';
-  const imageSize = isSmallSize ? '50px' : '150px';
-  const basis = {
-    'small': '500px',
-    'medium': '600px',
-  }[size] || 'large';
   return (
-    // <HoverCard
-    //   basis={basis}
-    //   height={!isSmallSize && '280px'}
-    //   margin={{ horizontal: 'medium', bottom: 'large' }}
-    //   pad='medium'
-    //   onClick={() => navigate(path)}
-    // >
-    <Card>
-      <CardBody justify='center'>
+    <HoverCard
+      onClick={() => navigate(path)}
+    >
+      <CardBody>
         <Box
-          justify='between'
+          justify='start'
           align='center'
-          gap='small'
-          direction={isSmallSize ? 'column' : 'row'}
+          gap='large'
+          direction="row"
         >
-          <Box height={imageSize} width={imageSize}>
-            <Image src={icon} />
+          <Box width='100px'>
+          <Image src={icon} />
           </Box>
-          <Box basis={!isSmallSize && '2/3'}>
+          <Box >
             <Heading
-              textAlign={isSmallSize ? 'center' : 'start'}
               margin={{ top: 'none', bottom: 'small' }}
-              level='2'
+              level='4'
             >
               {titleText}
             </Heading>
@@ -51,8 +37,7 @@ export default function LandingCard({
           </Box>
         </Box>
       </CardBody>
-      </Card>
-    // </HoverCard>
+    </HoverCard>
   );
 }
 

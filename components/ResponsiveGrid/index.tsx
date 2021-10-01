@@ -2,15 +2,26 @@ import React from 'react';
 import PropTypes from 'prop-types';
 import { Grid, ResponsiveContext } from 'grommet';
 
-const ResponsiveGrid = ({ children, columns, rows, ...props }) => (
-  <ResponsiveContext.Consumer>
+const ResponsiveGrid = ({ children, columns, rows, cardType, ...props }) => {
+  return (
+    <ResponsiveContext.Consumer>
     {(size) => {
+      let rowGap;
+
+      if (cardType === 'platform') {
+        rowGap = {
+          row: size === 'small' ? 'large' : '120px',
+          column: '120px'
+        }
+      } else if (cardType === 'landing'){
+        rowGap={
+          row: 'large',
+          column: 'xlarge'
+        }
+      }
       return (
         <Grid
-          gap={{
-            row: size === 'small' ? 'large' : '130px', 
-            column: '130px'
-          }}
+          gap={rowGap}
           {...props}
           rows={rows[size]}
           columns={columns[size]}
@@ -19,8 +30,8 @@ const ResponsiveGrid = ({ children, columns, rows, ...props }) => (
         </Grid>
       );
     }}
-  </ResponsiveContext.Consumer>
-);
+  </ResponsiveContext.Consumer>)
+};
 
 ResponsiveGrid.propTypes = {
   children: PropTypes.node,
