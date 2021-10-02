@@ -85,7 +85,7 @@ function Menu({ links, search, logo }) {
         direction='row'
         gap='small'
         align='center'
-        onClick={() => navigate('/')}
+        onClick={() => navigate('https://developer.hpe.com/')}
       >
         <Image alignSelf='center' src={logo} />
         <Heading level={3} margin='none' size='20px'>HPE Dev Portal</Heading>
