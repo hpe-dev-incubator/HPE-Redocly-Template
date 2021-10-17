@@ -91,8 +91,9 @@ function Menu({ links, search, logo }) {
         <Heading level={3} margin='none' size='20px'>HPE Dev Portal</Heading>
       </Box>
       <Box direction='row' align='center' gap='large' justify='between'>
-        {links.map((link) => (
+        {links.map((link, index) => (
           <Anchor
+            key={index}
             label={link.label}
             href={link.link}
             target={link.external && '_blank' }

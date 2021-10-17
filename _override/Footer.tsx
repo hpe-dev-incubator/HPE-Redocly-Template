@@ -38,12 +38,13 @@ export default function Footer(props:FooterProps) {
           <Text size='small'>{copyrightText}</Text>
         </Box>
         <Box margin={{ vertical: 'small' }} wrap={true} direction='row' gap='xsmall' align='center'>
-          {linkItems.map((item) => {
+          {linkItems.map((item, index) => {
             if (typeof item !== 'object') {
               return item;
             }
             return (
               <Anchor
+                key={index}
                 weight='normal'
                 color='dark-1'
                 size='small'
