@@ -2,7 +2,7 @@
 title: Demo API Portal
 ---
 
-import { LandingLayout } from '@redocly/developer-portal/ui';
+import { LandingLayout } from "@redocly/developer-portal/ui";
 
 import {
   Button,
@@ -16,90 +16,36 @@ import {
   H2,
   H3,
   SectionHeader,
-  Typography
-} from '@redocly/developer-portal/ui';
+  Typography,
+} from "@redocly/developer-portal/ui";
 
-import {
-  Grommet,
-  Section,
-  Box,
-  Card,
-  CardBody,
-  CardHeader,
-  CardFooter,
-  Heading,
-  RoutedButton,
-  Text,
-  Paragraph,
-  Grid,
-  ResponsiveContext,
-  Image,
-} from 'grommet';
+import { Grommet, Box, Heading, Text } from "grommet";
 
-import { hpe } from 'grommet-theme-hpe';
+import { hpe } from "grommet-theme-hpe";
 
-import { NavBar } from '@redocly/developer-portal/ui';
+import { NavBar } from "@redocly/developer-portal/ui";
 
-import icon1 from './images/hpe.svg';
-import launchFastIcon from './images/launch-fast.svg';
-import icon3 from './images/icon3.png';
-import bookManagementIcon from './images/book-management.svg';
-import foundOrPrivate from './images/found-or-private.svg';
+import icon1 from "./images/hpe.svg";
+import launchFastIcon from "./images/launch-fast.svg";
+import icon3 from "./images/icon3.png";
+import bookManagementIcon from "./images/book-management.svg";
+import foundOrPrivate from "./images/found-or-private.svg";
 import hpeElement from "./images/HPE_ELEMENT_20210217008_16x9_1600_0_72_RGB.jpg";
-import LandingCard from './components/LandingCard';
-import ResponsiveGrid from './components/ResponsiveGrid';
-import PlatformCard from './components/PlatformCard';
-import hpeLogo from './images/platforms/hpe.svg';
-import hpeDevLogo from './images/platforms/hpe-dev.svg';
-import grommetLogo from './images/platforms/grommet.svg';
-import hackShackLogo from './images/platforms/hackshack.svg';
-import slackLogo from './images/platforms/slack.svg';
-import gitHubLogo from './images/platforms/github.svg';
+import Hero from "./_components/Hero";
+import LandingCard from "./_components/LandingCard";
+import ResponsiveGrid from "./_components/ResponsiveGrid";
+import PlatformCard from "./_components/PlatformCard";
+import hpeLogo from "./images/platforms/hpe.svg";
+import hpeDevLogo from "./images/platforms/hpe-dev.svg";
+import grommetLogo from "./images/platforms/grommet.svg";
+import hackShackLogo from "./images/platforms/hackshack.svg";
+import slackLogo from "./images/platforms/slack.svg";
+import gitHubLogo from "./images/platforms/github.svg";
 
 export default LandingLayout;
 
 <NavBar location={props.location} standalone={false} />
-<Grommet theme={hpe}>
-  <Box
-    align='start'
-    justify='start'
-    background={{
-      dark: true,
-      image: `url(${hpeElement})`,
-    }}
-    pad={{ vertical: 'xlarge', horizontal: 'small' }}
-    height='75vh'
-    style={{ minHeight: 550, maxHeight: 900 }}
-  >
-    <Box width="35%" margin={{left: '150px'}}>
-      <Heading level='2' margin={{bottom: 'none'}} weight='bold' size='large'>
-        Product XXX API
-      </Heading>
-      <Text size="xxlarge">
-        Reference Documents
-      </Text>
-      <Text size="large" margin={{vertical: '50px'}}>
-          Lorem ipsum dolor sit amet, pri putent oportere quaerendum in, ea mea justo invenire
-          aliquando. Usu modo suavitate ea. Et sed labitur epicurei adipiscing. 
-      </Text>
-      <Box 
-        width="140px"
-      >
-        <RoutedButton
-          primary={true}
-          path="developer-portal"
-          label={
-            <Box >
-              <Text size='large'>
-                Get started
-              </Text>
-            </Box>
-          }
-        />
-      </Box>
-    </Box>
-  </Box>
-</Grommet>
+<Hero />
 <Grommet theme={hpe}>
 
   <Box align='center' pad='medium'>
@@ -127,7 +73,7 @@ export default LandingLayout;
           large: ['auto'],
           xlarge: ['auto'],
         }}
-                columns={{
+        columns={{
           small: ['auto'],
           medium: ['auto', 'auto'],
           large: ['auto', 'auto'],
@@ -244,5 +190,3 @@ export default LandingLayout;
     </Box>
   </Box>
 </Grommet>
-
-
