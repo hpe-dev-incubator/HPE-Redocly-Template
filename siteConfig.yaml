@@ -17,7 +17,8 @@ stylesheets:
   # note that GA doesn't work in DEV
 #  trackingId: UA-45997213-1
 #scripts:
-#  - ./static/intercom.js
+  - './scripts/ucep-loader.js'
+  - 'https://h50007.www5.hpe.com/hfws-static/js/framework/jquery/v-3-6-0/jquery.js'
 nav:
 
   - label: Training exercises
