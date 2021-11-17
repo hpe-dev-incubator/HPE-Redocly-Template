@@ -17,7 +17,7 @@ stylesheets:
   # note that GA doesn't work in DEV
 #  trackingId: UA-45997213-1
 #scripts:
-#  - ./static/intercom.js
+  - './scripts/footer-loader.js'
 nav:
 
   - label: Training exercises
